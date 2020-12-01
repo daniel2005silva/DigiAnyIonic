@@ -1,0 +1,100 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+  	 <ion-buttons slot="start">
+      <ion-menu-button><ion-icon name="menu-outline"></ion-icon></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cálculos Simples</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  [fullscreen]="true">
+	<ion-button expand="block" color="light" href="../calc/historico">Histórico</ion-button>
+	
+<ion-card color="light">
+	<ion-card-header>
+		<ion-grid>
+			<ion-row>
+				<ion-col size="9">
+    <ion-item>
+    	<ion-card-title *ngIf="!campo2">{{campo}}</ion-card-title>
+		<ion-card-title *ngIf="campo2">{{campo2}}</ion-card-title>
+		
+	</ion-item>
+				</ion-col>
+				<ion-col size="3">
+	
+		<ion-button color="dark" (click)="calcular('c')">c</ion-button>
+	
+				</ion-col>
+				</ion-row>
+				</ion-grid>
+  </ion-card-header>
+
+  <ion-card-content>
+  	<ion-grid>
+  		<ion-row>
+  			<ion-col size="3">
+    			<ion-button color="tertiary" (click)="calcular('1')">1</ion-button>
+    		</ion-col>
+    		<ion-col size="3">
+    			<ion-button color="tertiary" (click)="calcular('2')">2</ion-button>
+    		</ion-col>
+    		<ion-col size="3">
+   				<ion-button color="tertiary" (click)="calcular('3')">3</ion-button>
+   			</ion-col >
+   			<ion-col size="3">
+    			<ion-button color="dark" (click)="calcular('*')">*</ion-button>
+    		</ion-col>
+    	</ion-row>
+
+  <ion-row>
+  			<ion-col size="3">
+    			<ion-button color="tertiary" (click)="calcular('4')">4</ion-button>
+    		</ion-col>
+    		<ion-col size="3">
+    			<ion-button color="tertiary" (click)="calcular('5')">5</ion-button>
+    		</ion-col>
+    		<ion-col size="3">
+   				<ion-button color="tertiary" (click)="calcular('6')">6</ion-button>
+   			</ion-col >
+   			<ion-col size="3">
+    			<ion-button color="dark" (click)="calcular('/')">/</ion-button>
+    		</ion-col>
+    	</ion-row>
+
+    	<ion-row>
+  			<ion-col size="3">
+    			<ion-button color="tertiary" (click)="calcular('7')">7</ion-button>
+    		</ion-col>
+    		<ion-col size="3">
+    			<ion-button color="tertiary" (click)="calcular('8')">8</ion-button>
+    		</ion-col>
+    		<ion-col size="3">
+   				<ion-button color="tertiary" (click)="calcular('9')">9</ion-button>
+   			</ion-col >
+   			<ion-col size="3">
+    			<ion-button color="dark" (click)="calcular('-')">-</ion-button>
+    		</ion-col>
+    	</ion-row>
+
+    	<ion-row>
+  			<ion-col size="3">
+    			<ion-button color="dark" (click)="calcular('.')">,</ion-button>
+    		</ion-col>
+    		<ion-col size="3">
+    			<ion-button color="tertiary" (click)="calcular('0')">0</ion-button>
+    		</ion-col>
+    		<ion-col size="3">
+   				<ion-button color="dark" (click)="calcular('=')">=</ion-button>
+   			</ion-col >
+   			<ion-col size="3">
+    			<ion-button color="dark" (click)="calcular('+')">+</ion-button>
+    		</ion-col>
+    	</ion-row>
+
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+
+
+</ion-content>

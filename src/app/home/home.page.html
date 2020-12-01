@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+     <ion-buttons slot="start">
+      <ion-menu-button><ion-icon name="menu-outline"></ion-icon></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      AllNotas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-list class="animate__animated animate__backInDown animate__delay-1s">
+   
+
+   <ion-item-sliding *ngFor="let task of tasks" >
+     <ion-item (click)="openActions(task)" >
+       <ion-label *ngIf="!task.done">{{task.name}}</ion-label>
+       <ion-label *ngIf="task.done"><del>{{task.name}}</del></ion-label>
+       <ion-icon slot="start" name="radio-button-off" *ngIf="!task.done"></ion-icon>
+       <ion-icon slot="start" name="checkmark-circle" color="secondary" *ngIf="task.done"></ion-icon>
+     </ion-item>
+     <ion-item-options side="start">
+       <ion-item-option (click)="delete(task)" color="danger">Excluir</ion-item-option>
+
+     </ion-item-options>
+     <ion-item-options side="end">
+      <ion-item-option (click)="alterar(task)" color="tertiary">Alterar</ion-item-option>
+
+    </ion-item-options>
+   </ion-item-sliding>
+ </ion-list>
+ <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+   <ion-fab-button (click)="adicionar()" color="primary">
+     <ion-icon name="add" ></ion-icon>
+   </ion-fab-button>
+ </ion-fab>
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+  	 <ion-buttons slot="start">
+      <ion-menu-button><ion-icon name="menu-outline"></ion-icon></ion-menu-button>
+    </ion-buttons>
+  	<ion-title>
+  Temperatura
+</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button expand="block" color="light" href="../conversor">Voltar</ion-button>
+   <ion-card>
+   
+      <ion-card-content>
+       
+       <ion-card-title color="primary" style="text-align: 'center';">{{Resultado}}</ion-card-title>
+        
+      </ion-card-content>
+    </ion-card>
+  
+      <ion-card>
+        <ion-list>
+          <!-- Inputs with labels -->
+          <ion-item>
+            <ion-label position="floating" color="secondary">Opção?</ion-label>
+            <ion-select [(ngModel)]="opcao" >
+              <ion-select-option  value="cf">
+                Celsius(ºC) para Fahrenheit(ºF)
+              </ion-select-option>
+  
+              <ion-select-option value="fc">
+                Fahrenheit(ºF) para Celsius(ºC)
+              </ion-select-option>
+  
+             
+            </ion-select>
+  
+            <ion-label position="floating" color="secondary">Valor?</ion-label>
+            <ion-input type="number" [(ngModel)]="Valor"></ion-input>
+          </ion-item>
+    
+        
+        </ion-list>
+    
+      
+         
+          <ion-button expand="block" color="primary" shape="round" (click)="converter(opcao,Valor)"> Converter </ion-button>
+  
+      </ion-card>
+   
+
+</ion-content>

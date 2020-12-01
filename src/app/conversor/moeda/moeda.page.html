@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+  	 <ion-buttons slot="start">
+      <ion-menu-button><ion-icon name="menu-outline"></ion-icon></ion-menu-button>
+    </ion-buttons>
+  	<ion-title>
+  Moeda
+</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button expand="block" color="light" href="../conversor">Voltar</ion-button>
+<ion-card *ngIf="configuracao">
+  <ion-card-content>
+  <ion-button expand="block" color="light"  (click)="configurar('false')">Fechar</ion-button>
+  <ion-list>
+   
+
+    <ion-item-sliding *ngFor="let dado of Dados" >
+      <ion-item >
+        <ion-label >{{dado.Moeda}} = {{dado.Valor}}</ion-label>
+      </ion-item>
+      <ion-item-options side="start">
+        <ion-item-option (click)="alterar(dado)" color="danger">Editar</ion-item-option>
+ 
+      </ion-item-options>
+     
+    </ion-item-sliding>
+  </ion-list>
+</ion-card-content>
+</ion-card >
+ <ion-card>
+ 
+    <ion-card-content>
+     
+     <ion-card-title color="primary" style="text-align: 'center';">{{Resultado}}</ion-card-title>
+      
+    </ion-card-content>
+  </ion-card>
+
+    <ion-card>
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating" color="secondary">Opção?</ion-label>
+          <ion-select [(ngModel)]="Tipo" >
+            <ion-select-option  value="dr">
+              Dólar para Real
+            </ion-select-option>
+
+            <ion-select-option value="rd">
+              Real para Dólar
+            </ion-select-option>
+
+            <ion-select-option  value="er">
+              Euro para Real
+            </ion-select-option>
+
+            <ion-select-option value="re">
+              Real para Euro
+            </ion-select-option>
+          </ion-select>
+
+          <ion-label position="floating" color="secondary">Valor?</ion-label>
+          <ion-input type="number" [(ngModel)]="Valor"></ion-input>
+        </ion-item>
+  
+      
+      </ion-list>
+  
+    
+       
+        <ion-button expand="block" color="primary" shape="round" (click)="converter(Tipo,Valor)"> Converter </ion-button>
+
+    </ion-card>
+    <ion-button expand="block" color="light"  (click)="configurar('true')">Configuração</ion-button>
+   
+   <ion-card style="text-align: center;">
+  <br>
+    <ion-card-title color="secondary" > Atenção</ion-card-title>
+   <br>
+      
+      <ion-text color="tertiary" style="text-align: center;"> 
+        Cetifique-se que os valores para o Dólar e o Euro estão atualizados, se não atualize-os em CONFIGURAÇÃO.
+      </ion-text>
+   
+  </ion-card>
+</ion-content>

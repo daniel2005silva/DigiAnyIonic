@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+  	 <ion-buttons slot="start">
+      <ion-menu-button><ion-icon name="menu-outline"></ion-icon></ion-menu-button>
+    </ion-buttons>
+  	<ion-title>
+  Massa
+</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button expand="block" color="light" href="../conversor">Voltar</ion-button>
+  <ion-card>
+ 
+    <ion-card-content>
+     
+     <ion-card-title color="primary" style="text-align: 'center';">{{Resultado}}</ion-card-title>
+      
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    
+      <ion-item>
+        <ion-label position="floating" color="secondary">Valor?</ion-label>
+        <ion-input type="number" [(ngModel)]="Valor"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="secondary">1ª pção?</ion-label>
+        <ion-select [(ngModel)]="opcao1" >
+          <ion-select-option  value="kg">
+            Quilograma (kg)
+          </ion-select-option>
+
+          <ion-select-option value="hg">
+            Hectograma (hg)
+          </ion-select-option>
+
+          <ion-select-option  value="dag">
+            Decagrama (dag)
+          </ion-select-option>
+
+          <ion-select-option value="g">
+            Grama (g)
+          </ion-select-option>
+
+          <ion-select-option value="dg">
+            Decigrama (dg)
+          </ion-select-option>
+
+          <ion-select-option value="cg">
+            Centigrama (cg)
+          </ion-select-option>
+
+          <ion-select-option value="mg">
+            Miligrama (mg)
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating" color="secondary">2ª pção?</ion-label>
+        <ion-select [(ngModel)]="opcao2" >
+          <ion-select-option  value="kg">
+            Quilograma (kg)
+          </ion-select-option>
+
+          <ion-select-option value="hg">
+            Hectograma (hg)
+          </ion-select-option>
+
+          <ion-select-option  value="dag">
+            Decagrama (dag)
+          </ion-select-option>
+
+          <ion-select-option value="g">
+            Grama (g)
+          </ion-select-option>
+
+          <ion-select-option value="dg">
+            Decigrama (dg)
+          </ion-select-option>
+
+          <ion-select-option value="cg">
+            Centigrama (cg)
+          </ion-select-option>
+
+          <ion-select-option value="mg">
+            Miligrama (mg)
+          </ion-select-option>
+        </ion-select>
+
+        
+      </ion-item>
+
+
+  
+     
+      <ion-button expand="block" color="primary" shape="round" (click)="converter(Valor, opcao1, opcao2)"> Converter </ion-button>
+
+  </ion-card>
+
+</ion-content>
